@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use((req, res, next) => {
-  User.findById("641d831b522017cded426960")
+  User.findById("641f05a9522017cded426986")
     .then((user) => {
       req.user = new User(user.name, user.email, user.cart, user._id);
       next();
@@ -35,5 +35,3 @@ app.use(errorController.get404);
 mongoConnect(() => {
   app.listen(3000);
 });
-
-// nDOo1wFx5xzH3vAe-password
